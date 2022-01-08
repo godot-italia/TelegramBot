@@ -1,0 +1,57 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "TelegramBot",
+"language": "GDScript",
+"path": "res://addons/telegram-bot-api/telegram_bot/telegram_bot.gd"
+}, {
+"base": "HTTPRequest",
+"class": "TelegramBotTask",
+"language": "GDScript",
+"path": "res://addons/telegram-bot-api/telegram_bot_task/telegram_bot_task.gd"
+}, {
+"base": "Reference",
+"class": "TelegramMessage",
+"language": "GDScript",
+"path": "res://addons/telegram-bot-api/telegram_classes/telegram_message.gd"
+} ]
+_global_script_class_icons={
+"TelegramBot": "",
+"TelegramBotTask": "",
+"TelegramMessage": ""
+}
+
+[application]
+
+config/name="godot-engine.telegram-api"
+run/main_scene="res://scn/Node.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+TelegramAPI="*res://addons/telegram-bot-api/telegram-api/telegram_api.gd"
+
+[display]
+
+window/dpi/allow_hidpi=true
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/telegram-bot-api/plugin.cfg" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
